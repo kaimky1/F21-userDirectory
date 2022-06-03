@@ -1,11 +1,15 @@
 import React, { createContext, useState } from "react";
 import data from "../data/data";
 import DisplayNumber from "./DisplayNumber";
+import NewEmployee from "./NewEmployee";
 
 export const DisplayNumberContext = createContext();
-let dataLength = data.length;
+
+
 const Display = () => {
+  let dataLength = data.length;
   const [count, setCount] = useState(0);
+  const [toggle, setToggle] = useState(true)
 
   const clickHandler = () => {
     if (count === data.length - 1) {
@@ -24,6 +28,14 @@ const Display = () => {
     }
     return;
   };
+
+  const deleteHandler = () => {
+    data.splice(count, 1)
+    console.log("After splice", data)
+    console.log("count",count, "datalength", data.length)
+    setToggle(!toggle)
+    // count <= (data.length - 1) ? setCount(count - 1) : setCount(count + 1)
+  }
 
   return (
     <div>
@@ -46,6 +58,8 @@ const Display = () => {
       </ol>
       <button onClick={clickHandler2}>Back</button>
       <button onClick={clickHandler}>Next</button>
+      <button onClick={deleteHandler}>Delete</button>
+      <NewEmployee data={data}/>
     </div>
   );
 };
