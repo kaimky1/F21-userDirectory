@@ -2,6 +2,7 @@ import React, { createContext, useState } from "react";
 import data from "../data/data";
 import DisplayNumber from "./DisplayNumber";
 import NewEmployee from "./NewEmployee";
+import {Link} from 'react-router-dom'
 
 export const DisplayNumberContext = createContext();
 
@@ -34,7 +35,10 @@ const Display = () => {
     console.log("After splice", data)
     console.log("count",count, "datalength", data.length)
     setToggle(!toggle)
-    // count <= (data.length - 1) ? setCount(count - 1) : setCount(count + 1)
+    // if(count == data.length-1 && count != 1){
+    //   setCount(count-1)
+    // }
+    // count == (data.length - 1) ? setCount(count - 1) : null
   }
 
   return (
@@ -59,7 +63,9 @@ const Display = () => {
       <button onClick={clickHandler2}>Back</button>
       <button onClick={clickHandler}>Next</button>
       <button onClick={deleteHandler}>Delete</button>
-      <NewEmployee data={data}/>
+      <Link to="/addEmployee">
+        <button>Register</button>
+      </Link>
     </div>
   );
 };
