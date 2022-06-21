@@ -1,5 +1,5 @@
 import React, { createContext, useState } from "react";
-import data from "../data/data";
+// import data from "../data/data";
 import DisplayNumber from "./DisplayNumber";
 import NewEmployee from "./NewEmployee";
 import {Link} from 'react-router-dom'
@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom'
 export const DisplayNumberContext = createContext();
 
 
-const Display = () => {
+const Display = ({data}) => {
   let dataLength = data.length;
   const [count, setCount] = useState(0);
   const [toggle, setToggle] = useState(true)

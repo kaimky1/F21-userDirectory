@@ -65,7 +65,7 @@ const NewEmployee = ({ data }) => {
         type="country"
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        value={formik.values.email}
+        value={formik.values.country}
       />
       {formik.touched.country && formik.errors.country ? <div>{formik.errors.country}</div> : null}
 
@@ -76,7 +76,7 @@ const NewEmployee = ({ data }) => {
         type="employer"
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        value={formik.values.email}
+        value={formik.values.employer}
       />
       {formik.touched.employer && formik.errors.employer ? <div>{formik.errors.employer}</div> : null}
 
@@ -87,7 +87,7 @@ const NewEmployee = ({ data }) => {
         type="title"
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        value={formik.values.email}
+        value={formik.values.title}
       />
       {formik.touched.title && formik.errors.title ? <div>{formik.errors.title}</div> : null}
 

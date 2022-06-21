@@ -8,7 +8,7 @@ const FormEmployee = () => {
   return (
     <div>
       <Routes>
-        <Route index element={<Display />}></Route>
+        <Route index element={<Display data={data}/>}></Route>
         <Route path="/addEmployee" element={<NewEmployee data={data}/>} />
       </Routes> 
     </div>
